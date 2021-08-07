@@ -56,7 +56,7 @@ class UsersController extends Controller
         return view('users.show',$data);
     }
     
-     public function followings($id)
+    public function followings($id)
     {
         $user = User::find($id);
         $followings = $user->followings()->paginate(9);
@@ -71,7 +71,7 @@ class UsersController extends Controller
         return view('users.followings', $data);
     }
 
-     public function followers($id)
+    public function followers($id)
     {
         $user = User::find($id);
         $followers = $user->followers()->paginate(9);
