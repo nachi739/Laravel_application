@@ -30,6 +30,9 @@ Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('followings', 'UsersController@followings')->name('followings');
     Route::get('followers', 'UsersController@followers')->name('followers');
     });
+    
+//他サービス連携
+Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
 
 Route::group(['middleware' => 'auth'], function () {
     //名前変更
